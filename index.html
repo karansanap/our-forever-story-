@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Forever Story 💍</title>  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff1eb, #ace0f9);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: url('hero.jpg') center/cover no-repeat;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      font-size: 2.3rem;
+      margin-bottom: 40px;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      transition: transform 0.4s;
+      cursor: pointer;
+    }
+
+    .card:hover { transform: translateY(-10px); }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+
+    .love-note {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #fff;
+      border-radius: 25px;
+      padding: 50px 30px;
+      text-align: center;
+      font-size: 1.1rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+
+    .love-note h2 { margin-bottom: 20px; }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .modal.active { display: flex; }
+
+  </style></head>
+<body><header>
+  <h1>Karan ❤️ His Forever</h1>
+  <p>Engagement • Sangeet • Wedding • A Lifetime of Love</p>
+</header><section>
+  <h2>Our Beautiful Journey</h2>
+  <div class="timeline"><div class="card" onclick="openModal('engagement.jpg')">
+  <img src="engagement.jpg" alt="Engagement">
+  <div class="card-content">
+    <h3>Engagement</h3>
+    <p>The day our forever began 💍</p>
+  </div>
+</div>
+
+<div class="card" onclick="openModal('sangeet.jpg')">
+  <img src="sangeet.jpg" alt="Sangeet">
+  <div class="card-content">
+    <h3>Sangeet</h3>
+    <p>Music, dance & endless smiles 💃</p>
+  </div>
+</div>
+
+<div class="card" onclick="openModal('wedding.jpg')">
+  <img src="wedding.jpg" alt="Wedding">
+  <div class="card-content">
+    <h3>Wedding</h3>
+    <p>Two souls, one promise ❤️</p>
+  </div>
+</div>
+
+  </div>
+</section><section>
+  <div class="love-note">
+    <h2>A Note For You</h2>
+    <p>
+      From our first smile to every laugh we share,
+      this journey with you is my favorite story.
+      Thank you for choosing me, today and always.
+    </p>
+  </div>
+</section><footer>
+  Made with ❤️ for my wife | Forever & Always
+</footer><!-- Modal --><div class="modal" id="modal" onclick="closeModal()">
+  <img id="modalImg" src="" alt="Full Image" />
+</div><script>
+  function openModal(src) {
+    document.getElementById('modalImg').src = src;
+    document.getElementById('modal').classList.add('active');
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.remove('active');
+  }
+</script></body>
+</html>
