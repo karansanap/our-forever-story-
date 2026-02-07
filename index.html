@@ -193,6 +193,28 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+
+    /* MUSIC BUTTON */
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      padding: 12px 18px;
+      border-radius: 30px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 9999;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .music-btn:hover {
+      transform: scale(1.05);
+      background: #ffe6ee;
+    }
+
 </style></head>
 <body><header>
   <div>
@@ -208,7 +230,7 @@
       <span class="word">Forever</span>
     </p>
   </div>
-</header><section>
+</header><!-- MUSIC BUTTON --><div class="music-btn" onclick="toggleMusic()">🎵 Play Music</div><section>
   <h2>Our Beautiful Journey</h2>
   <div class="timeline"><div class="card" onclick="openModal('roka.jpg')">
   <img src="roka.jpg" alt="Roka">
