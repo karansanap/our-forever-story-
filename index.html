@@ -132,7 +132,36 @@
 
     .modal.active { display: flex; }
 
-  </style></head>
+  
+    /* HERO WORD FADE + GLOW */
+    .hero-timeline {
+      margin-top: 14px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    .hero-timeline .word {
+      opacity: 0;
+      display: inline-block;
+      animation: fadeIn 1s forwards;
+    }
+
+    .hero-timeline .word:nth-child(1) { animation-delay: 0.5s; }
+    .hero-timeline .word:nth-child(3) { animation-delay: 1.5s; }
+    .hero-timeline .word:nth-child(5) { animation-delay: 2.5s; }
+    .hero-timeline .word:nth-child(7) { animation-delay: 3.5s; }
+
+    .hero-timeline .active {
+      color: #ffd1dc;
+      text-shadow: 0 0 8px rgba(255, 182, 193, 0.8);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+</style></head>
 <body><header>
   <div>
     <h1 id="heroTitle">Karan ❤️ Pankti</h1>
