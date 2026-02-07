@@ -135,15 +135,19 @@
   
     /* HERO WORD FADE + GLOW */
     .hero-timeline {
-      margin-top: 14px;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
+      margin-top: 18px;
+      font-size: 1.2rem;
+      letter-spacing: 1.5px;
     }
 
     .hero-timeline .word {
       opacity: 0;
       display: inline-block;
-      animation: fadeIn 1s forwards;
+      animation: fadeIn 1.2s forwards, glowPulse 3s ease-in-out infinite;
+      color: #ffe6ee;
+      text-shadow:
+        0 0 4px rgba(255, 182, 193, 0.5),
+        0 0 10px rgba(255, 105, 180, 0.35);
     }
 
     .hero-timeline .word:nth-child(1) { animation-delay: 0.5s; }
@@ -152,8 +156,29 @@
     .hero-timeline .word:nth-child(7) { animation-delay: 3.5s; }
 
     .hero-timeline .active {
-      color: #ffd1dc;
-      text-shadow: 0 0 8px rgba(255, 182, 193, 0.8);
+      /* same glow as others – no extra highlight */
+      text-shadow:
+        0 0 4px rgba(255, 182, 193, 0.5),
+        0 0 10px rgba(255, 105, 180, 0.35);
+    }
+
+    @keyframes glowPulse {
+      0% {
+        text-shadow:
+          0 0 6px rgba(255, 182, 193, 0.6),
+          0 0 14px rgba(255, 105, 180, 0.4);
+      }
+      50% {
+        text-shadow:
+          0 0 10px rgba(255, 182, 193, 1),
+          0 0 24px rgba(255, 105, 180, 0.9),
+          0 0 40px rgba(255, 105, 180, 0.7);
+      }
+      100% {
+        text-shadow:
+          0 0 6px rgba(255, 182, 193, 0.6),
+          0 0 14px rgba(255, 105, 180, 0.4);
+      }
     }
 
     @keyframes fadeIn {
