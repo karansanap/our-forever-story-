@@ -1,9 +1,19 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Forever Story 💍</title>  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Forever Story ❤️</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -12,34 +22,34 @@
       overflow-x: hidden;
     }
 
+    /* HERO */
     header {
       height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
       background: url('hero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
+      text-align: center;
     }
 
     header::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.45);
+      background: rgba(0,0,0,0.5);
     }
 
-    header h1, header p {
+    header div {
       position: relative;
       z-index: 2;
-      color: #fff;
+      color: white;
     }
 
     header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin-bottom: 10px;
+      font-size: 3.2rem;
+      margin-bottom: 12px;
     }
 
     header p {
@@ -47,6 +57,7 @@
       opacity: 0.9;
     }
 
+    /* SECTION */
     section {
       padding: 70px 20px;
       max-width: 1200px;
@@ -56,30 +67,33 @@
     section h2 {
       font-family: 'Playfair Display', serif;
       text-align: center;
-      font-size: 2.3rem;
+      font-size: 2.4rem;
       margin-bottom: 40px;
     }
 
+    /* CARDS */
     .timeline {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
     }
 
     .card {
       background: #fff;
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-      transition: transform 0.4s;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
       cursor: pointer;
+      transition: transform 0.4s ease;
     }
 
-    .card:hover { transform: translateY(-10px); }
+    .card:hover {
+      transform: translateY(-10px);
+    }
 
     .card img {
       width: 100%;
-      height: 280px;
+      height: 300px;
       object-fit: cover;
     }
 
@@ -90,20 +104,28 @@
 
     .card-content h3 {
       font-family: 'Playfair Display', serif;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      font-size: 1.4rem;
     }
 
+    /* LOVE NOTE */
     .love-note {
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      color: #fff;
-      border-radius: 25px;
-      padding: 50px 30px;
+      color: white;
+      padding: 60px 30px;
+      border-radius: 30px;
       text-align: center;
-      font-size: 1.1rem;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
     }
 
-    .love-note h2 { margin-bottom: 20px; }
+    .love-note h2 {
+      margin-bottom: 20px;
+    }
+
+    .love-note p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
 
     footer {
       text-align: center;
@@ -112,78 +134,134 @@
       opacity: 0.7;
     }
 
-    /* Modal */
+    /* MODAL */
     .modal {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       justify-content: center;
       align-items: center;
-      z-index: 1000;
+      z-index: 999;
     }
 
     .modal img {
       max-width: 90%;
       max-height: 90%;
       border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     }
 
-    .modal.active { display: flex; }
+    .modal.active {
+      display: flex;
+    }
 
-  </style></head>
-<body><header>
-  <h1>Karan ❤️ His Forever</h1>
-  <p>Engagement • Sangeet • Wedding • A Lifetime of Love</p>
-</header><section>
+    /* MUSIC BUTTON */
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #fff;
+      border-radius: 50px;
+      padding: 12px 18px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="love-song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-btn" onclick="toggleMusic()">🎵 Play Music</div>
+
+<header>
+  <div>
+    <h1>Karan ❤️ His Forever</h1>
+    <p>Engagement • Sangeet • Wedding • Forever</p>
+  </div>
+</header>
+
+<section>
   <h2>Our Beautiful Journey</h2>
-  <div class="timeline"><div class="card" onclick="openModal('engagement.jpg')">
-  <img src="engagement.jpg" alt="Engagement">
-  <div class="card-content">
-    <h3>Engagement</h3>
-    <p>The day our forever began 💍</p>
-  </div>
-</div>
 
-<div class="card" onclick="openModal('sangeet.jpg')">
-  <img src="sangeet.jpg" alt="Sangeet">
-  <div class="card-content">
-    <h3>Sangeet</h3>
-    <p>Music, dance & endless smiles 💃</p>
-  </div>
-</div>
+  <div class="timeline">
+    <div class="card" onclick="openModal('engagement.jpg')">
+      <img src="engagement.jpg" alt="Engagement">
+      <div class="card-content">
+        <h3>Engagement 💍</h3>
+        <p>The day our forever began</p>
+      </div>
+    </div>
 
-<div class="card" onclick="openModal('wedding.jpg')">
-  <img src="wedding.jpg" alt="Wedding">
-  <div class="card-content">
-    <h3>Wedding</h3>
-    <p>Two souls, one promise ❤️</p>
-  </div>
-</div>
+    <div class="card" onclick="openModal('sangeet.jpg')">
+      <img src="sangeet.jpg" alt="Sangeet">
+      <div class="card-content">
+        <h3>Sangeet 💃</h3>
+        <p>Music, laughter & love</p>
+      </div>
+    </div>
 
+    <div class="card" onclick="openModal('wedding.jpg')">
+      <img src="wedding.jpg" alt="Wedding">
+      <div class="card-content">
+        <h3>Wedding ❤️</h3>
+        <p>Two souls, one promise</p>
+      </div>
+    </div>
   </div>
-</section><section>
+</section>
+
+<section>
   <div class="love-note">
-    <h2>A Note For You</h2>
+    <h2>For My Wife</h2>
     <p>
-      From our first smile to every laugh we share,
-      this journey with you is my favorite story.
-      Thank you for choosing me, today and always.
+      From the first smile to every dream we share,<br>
+      loving you is the easiest thing I’ve ever done.<br>
+      Thank you for choosing me — today and forever ❤️
     </p>
   </div>
-</section><footer>
-  Made with ❤️ for my wife | Forever & Always
-</footer><!-- Modal --><div class="modal" id="modal" onclick="closeModal()">
-  <img id="modalImg" src="" alt="Full Image" />
-</div><script>
+</section>
+
+<footer>
+  Made with infinite love 💕
+</footer>
+
+<!-- IMAGE MODAL -->
+<div class="modal" id="modal" onclick="closeModal()">
+  <img id="modalImg" src="">
+</div>
+
+<script>
   function openModal(src) {
-    document.getElementById('modalImg').src = src;
-    document.getElementById('modal').classList.add('active');
+    document.getElementById("modalImg").src = src;
+    document.getElementById("modal").classList.add("active");
   }
 
   function closeModal() {
-    document.getElementById('modal').classList.remove('active');
+    document.getElementById("modal").classList.remove("active");
   }
-</script></body>
+
+  const music = document.getElementById("bgMusic");
+  const btn = document.querySelector(".music-btn");
+  let playing = false;
+
+  function toggleMusic() {
+    if (!playing) {
+      music.play();
+      btn.innerText = "⏸ Pause Music";
+    } else {
+      music.pause();
+      btn.innerText = "🎵 Play Music";
+    }
+    playing = !playing;
+  }
+</script>
+
+</body>
 </html>
